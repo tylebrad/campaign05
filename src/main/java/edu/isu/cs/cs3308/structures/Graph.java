@@ -32,7 +32,7 @@ public interface Graph<V, E> {
     /** For edge e incident to vertex v, returns the other vertex of the edge; an error occurs
      *  if e is not incident to v.
      */
-    V opposite(Vertex<V> v, Edge<E> e);
+    Vertex<V> opposite(Vertex<V> v, Edge<E> e);
 
     /** Returns the number of outgoing edges from vertex v. */
     int outDegree(Vertex<V> v);
