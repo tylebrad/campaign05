@@ -5,6 +5,7 @@
 // 4-24-2019
 package edu.isu.cs.cs3308.structures.impl;
 
+import java.util.LinkedList;
 import edu.isu.cs.cs3308.structures.Edge;
 import edu.isu.cs.cs3308.structures.Graph;
 import edu.isu.cs.cs3308.structures.Vertex;
@@ -12,6 +13,32 @@ import edu.isu.cs.cs3308.structures.Vertex;
 import java.util.Iterator;
 
 public class WeightedGraph<V, E> implements Graph<V, E> {
+
+    static class NestedEdge<E> implements Edge<E>{
+        /**
+         * Returns the element associated with the edge
+         */
+        @Override
+        public E getElement() {
+            return null;
+        }
+
+        /**
+         * Returns an array of the two endpoints of the edge.
+         */
+        @Override
+        public <V> Vertex<V>[] getEndpoints() {
+            return new Vertex[0];
+        }
+    }
+
+    V vertices;
+    LinkedList<NestedEdge<E>> [] adjacentyList;
+
+    WeightedGraph(V vertices){
+        this.vertices = vertices;
+        adjacentyList = new LinkedList[vertices];
+    }
     /**
      * Returns the number of vertices of the graph
      */

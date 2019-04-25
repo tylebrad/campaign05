@@ -12,6 +12,11 @@ import edu.isu.cs.cs3308.structures.Vertex;
 import java.util.Iterator;
 
 public class UnWeightedGraph<V, E> implements Graph<V, E> {
+
+    E source;
+    E destination;
+    E weight;
+
     /**
      * Returns the number of vertices of the graph
      */
